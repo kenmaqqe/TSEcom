@@ -1,0 +1,114 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/HelveticaNeue-Bold.otf") format("otf");
+}
+body {
+  font-family: "MyFont", sans-serif;
+}
+.container {
+  max-width: 1320px;
+  padding-left: 60px;
+  padding-right: 60px;
+  margin: 0 auto;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  padding: 10px;
+  width: 200px;
+  transition: transform 0.3s ease;
+}
+@media (max-width: 620px){
+    .card{
+        max-width: 150px;
+    }
+    .container{
+        max-width: 400px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.card p {
+  margin: 5px 0;
+}
+
+.faq-section {
+  display: flex;
+}
+.faq-section {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+@media (max-width: 750px) {
+  .faq-section {
+    flex-direction: column;
+  }
+}
+.faq-section > div:first-child {
+  flex: 1;
+}
+
+.faq-container {
+  flex: 2;
+}
+
+.faqCard {
+  background-color: #e6f3f7;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faqCard h3 {
+  padding: 15px;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.faqCard h3::after {
+  content: "+";
+  font-size: 18px;
+}
+
+.faqCard.active h3::after {
+  content: "-";
+}
+
+.faqCard p {
+  padding: 0 15px;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, padding 0.3s ease;
+}
+
+.faqCard.active p {
+  padding: 15px;
+  max-height: 1000px;
+}
